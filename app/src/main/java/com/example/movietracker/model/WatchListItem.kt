@@ -3,7 +3,7 @@ package com.example.movietracker.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "watchlist")
+@Entity(tableName = "watchlist_items")
 data class WatchlistItem(
     @PrimaryKey val id: Int,      // Unique ID of the movie/TV show
     val title: String,            // Title of the movie/TV show

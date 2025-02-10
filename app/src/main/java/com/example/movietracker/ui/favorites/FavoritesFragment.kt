@@ -6,13 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movietracker.model.Movie
 import com.example.movietracker.ui.common.MovieAdapter
 import com.example.movietracker.ui.details.DetailsFragment
+import com.example.movietracker.viewmodel.FavoritesViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.text.Typography.dagger
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FavoritesFragment : Fragment() {
@@ -43,9 +46,23 @@ class FavoritesFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
-        // Observe favorites from ViewModel
-        viewModel.favorites.observe(viewLifecycleOwner) { favorites ->
-            adapter.submitList(favorites)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.favorites.collect { favorites ->
+                val movies = favorites.map { favorite ->
+                    Movie(
+                        id = favorite.id,
+                        title = favorite.title,
+                        overview = "No Overview",  // Default or empty string for now
+                        posterPath = favorite.posterPath,
+                        backdropPath = null,       // Set to null as not available in Favorite
+                        releaseDate = "TBD",       // Default value, you can adjust this based on your app's needs
+                        voteAverage = 0.0,         // Default value for ratings
+                        voteCount = 0,             // Default value for vote count
+                        genreIds = emptyList()     // Default empty list for genres
+                    )
+                }
+                adapter.submitList(movies)
+            }
         }
     }
 }

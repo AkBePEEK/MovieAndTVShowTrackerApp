@@ -12,6 +12,8 @@ import kotlinx.coroutines.launch
 class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     private val _movies = MutableLiveData<List<Movie>>()
     val movies: LiveData<List<Movie>> get() = _movies
+    private val _movieDetails = MutableLiveData<Movie>()
+    val movieDetails: LiveData<Movie> = _movieDetails
 
     fun fetchPopularMovies(apiKey: String) {
         viewModelScope.launch {
@@ -19,16 +21,32 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
                 val response = RetrofitInstance.api.getPopularMovies(apiKey)
                 _movies.value = response.results
             } catch (e: Exception) {
-                // Handle error
+                e.printStackTrace()
             }
         }
     }
 
-    fun addToFavorites(movieId: Int, title: Any, s: String) {
-
+    fun addToFavorites(movieId: Int, title: String, posterPath: String, type: String) {
+        viewModelScope.launch {
+            repository.addToWatchlist(movieId, title, posterPath, type)
+        }
     }
 
-    fun searchMovies(s: String, it: String) {
+    fun getMovieDetails(movieId: Int, apiKey: String) {
+        viewModelScope.launch {
+            try {
+                val movie = repository.getMovieDetails(movieId, apiKey)
+                _movieDetails.postValue(movie)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
 
+    fun searchMovies(apiKey: String, query: String) {
+        viewModelScope.launch {
+            val result = repository.searchMovies(apiKey, query)
+            _movies.value = result
+        }
     }
 }

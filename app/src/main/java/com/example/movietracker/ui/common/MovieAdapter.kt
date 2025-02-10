@@ -1,5 +1,6 @@
 package com.example.movietracker.ui.common
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class MovieAdapter(
         private val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         private val ratingTextView: TextView = itemView.findViewById(R.id.ratingTextView)
 
+        @SuppressLint("SetTextI18n")
         fun bind(movie: Movie) {
             titleTextView.text = movie.title
             ratingTextView.text = "Rating: ${movie.voteAverage}"

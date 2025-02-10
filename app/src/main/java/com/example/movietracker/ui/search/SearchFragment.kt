@@ -25,7 +25,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set up RecyclerView
-        val adapter = MovieAdapter()
+        val adapter = MovieAdapter { /* No action for now */ }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 

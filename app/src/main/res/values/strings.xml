@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="hello_movie_tracker">Hello, Movie Tracker!</string>
+    <string name="movie_rating">Rating: %1$s</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_poster">Movie poster</string>
 </resources>

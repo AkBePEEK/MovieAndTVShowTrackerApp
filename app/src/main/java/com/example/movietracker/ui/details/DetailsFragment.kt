@@ -35,11 +35,9 @@ class DetailsFragment : Fragment() {
             Glide.with(requireContext())
                 .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
                 .into(binding.posterImageView)
-        }
-
-        // Add to favorites
-        binding.favoriteButton.setOnClickListener {
-            viewModel.addToFavorites(movieId, movie.title, movie.posterPath ?: "")
+            binding.favoriteButton.setOnClickListener {
+                viewModel.addToFavorites(movieId, movie.title, movie.posterPath ?: "", "movie")
+            }
         }
     }
 }

@@ -6,12 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movietracker.model.Movie
 import com.example.movietracker.ui.common.MovieAdapter
 import com.example.movietracker.ui.details.DetailsFragment
+import com.example.movietracker.viewmodel.WatchlistViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentWatchlistBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class WatchlistFragment : Fragment() {
@@ -43,8 +47,23 @@ class WatchlistFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         // Observe watchlist from ViewModel
-        viewModel.watchlist.observe(viewLifecycleOwner) { watchlist ->
-            adapter.submitList(watchlist)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.watchlist.collect { watchlistItems ->
+                val movies = watchlistItems.map { watchlistItem ->
+                    Movie(
+                        id = watchlistItem.id,
+                        title = watchlistItem.title,
+                        overview = "No Overview",  // Default or empty string for now
+                        posterPath = watchlistItem.posterPath,
+                        backdropPath = null,       // Set to null as not available in Favorite
+                        releaseDate = "TBD",       // Default value, you can adjust this based on your app's needs
+                        voteAverage = 0.0,         // Default value for ratings
+                        voteCount = 0,             // Default value for vote count
+                        genreIds = emptyList()     // Default empty list for genres
+                    )
+                }
+                adapter.submitList(movies)
+            }
         }
     }
 }

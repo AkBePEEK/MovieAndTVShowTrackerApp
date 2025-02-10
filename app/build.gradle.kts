@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -82,4 +83,10 @@ dependencies {
     // Navigation Component
     implementation(libs.androidx.navigation.fragment.ktx.v277)
     implementation(libs.androidx.navigation.ui.ktx.v277)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.androidx.hilt.lifecycle.viewmodel)
+    kapt(libs.androidx.hilt.compiler)
 }
