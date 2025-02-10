@@ -9,7 +9,10 @@ converterGson = "2.11.0"
 converterMoshi = "2.11.0"
 coreKtxVersion = "1.15.0"
 coreTesting = "2.2.0"
+daggerCompiler = "2.48"
 glide = "4.16.0"
+gradle = "7.x.x"
+gradleVersion = "7.4.2"
 hiltAndroid = "2.48"
 hiltCompiler = "1.2.0"
 hiltLifecycleViewmodel = "1.0.0-alpha03"
@@ -18,7 +21,11 @@ coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-kotlinStdlib = "2.1.0"
+kotlinGradlePlugin = "1.8.21"
+#noinspection GradleDependency
+kotlinStdlib = "1.8.21"
+#noinspection GradleDependency
+kotlinStdlibVersion = "1.8.21"
 kotlinxCoroutinesAndroid = "1.10.1"
 kotlinxCoroutinesTest = "1.7.3"
 lifecycleLivedataKtx = "2.8.7"
@@ -106,7 +113,10 @@ converter-gson-v290 = { module = "com.squareup.retrofit2:converter-gson", versio
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 #noinspection SimilarGradleDependency
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hiltAndroid" }
+dagger-compiler-v2x = { module = "com.google.dagger:dagger-compiler", version.ref = "daggerCompiler" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+gradle-v742 = { module = "com.android.tools.build:gradle", version.ref = "gradleVersion" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
 #noinspection SimilarGradleDependency
@@ -126,7 +136,9 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 #noinspection SimilarGradleDependency
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+kotlin-stdlib-v1821 = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlibVersion" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
