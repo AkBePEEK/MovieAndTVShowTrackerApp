@@ -1,12 +1,13 @@
 [versions]
 agp = "8.8.0"
-appcompat = "1.6.1"
+appcompat = "1.7.0"
 coil = "2.7.0"
 composeBomVersion = "2025.01.01"
-constraintlayout = "2.1.4"
-converterGson = "2.9.0"
+constraintlayout = "2.2.0"
+converterGson = "2.11.0"
 converterMoshi = "2.11.0"
-coreKtxVersion = "1.12.0"
+coreKtxVersion = "1.15.0"
+coreTesting = "2.2.0"
 glide = "4.16.0"
 hiltAndroid = "2.48"
 hiltCompiler = "1.2.0"
@@ -17,20 +18,23 @@ junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 kotlinxCoroutinesAndroid = "1.10.1"
-lifecycleLivedataKtx = "2.7.0"
+kotlinxCoroutinesTest = "1.7.3"
+lifecycleLivedataKtx = "2.8.7"
+lifecycleLivedataKtxVersion = "2.8.7"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
 composeBom = "2025.01.01"
 lifecycleViewmodelKtx = "2.8.7"
-lifecycleViewmodelKtxVersion = "2.7.0"
-material = "1.11.0"
+lifecycleViewmodelKtxVersion = "2.8.7"
+material = "1.12.0"
+mockk = "1.13.7"
 navigationFragmentKtx = "2.8.6"
-navigationFragmentKtxVersion = "2.7.7"
-navigationUiKtx = "2.7.7"
+navigationFragmentKtxVersion = "2.8.6"
+navigationUiKtx = "2.8.6"
 recyclerview = "1.4.0"
 recyclerviewVersion = "1.4.0"
 retrofit = "2.11.0"
-retrofitVersion = "2.9.0"
+retrofitVersion = "2.11.0"
 roomCompiler = "2.6.1"
 roomKtx = "2.6.1"
 roomRuntime = "2.6.1"
@@ -39,37 +43,56 @@ junitJunit = "4.13.2"
 monitor = "1.7.2"
 junitKtx = "1.2.1"
 lifecycleViewmodelAndroid = "2.8.7"
+pagingCommonAndroid = "3.3.5"
+junitJunitVersion = "4.13.2"
 
 [libraries]
 #noinspection SimilarGradleDependency
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+#noinspection SimilarGradleDependency
 androidx-compose-bom-v20231000 = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+#noinspection SimilarGradleDependency
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+#noinspection SimilarGradleDependency
 androidx-core-ktx-v1120 = { module = "androidx.core:core-ktx", version.ref = "coreKtxVersion" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 androidx-hilt-lifecycle-viewmodel = { module = "androidx.hilt:hilt-lifecycle-viewmodel", version.ref = "hiltLifecycleViewmodel" }
+#noinspection SimilarGradleDependency
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+#noinspection SimilarGradleDependency
+androidx-lifecycle-livedata-ktx-v262 = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtxVersion" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycleViewmodelKtx" }
+#noinspection SimilarGradleDependency
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+#noinspection SimilarGradleDependency
 androidx-lifecycle-viewmodel-ktx-v270 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtxVersion" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationFragmentKtx" }
+#noinspection SimilarGradleDependency
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+#noinspection SimilarGradleDependency
 androidx-navigation-fragment-ktx-v277 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtxVersion" }
+#noinspection SimilarGradleDependency
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+#noinspection SimilarGradleDependency
 androidx-navigation-ui-ktx-v277 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+#noinspection SimilarGradleDependency
 androidx-recyclerview-v121 = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerviewVersion" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+#noinspection SimilarGradleDependency
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterMoshi" }
+#noinspection SimilarGradleDependency
 converter-gson-v290 = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 #noinspection SimilarGradleDependency
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
+#noinspection SimilarGradleDependency
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -84,11 +107,16 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+#noinspection SimilarGradleDependency
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 material3 = { module = "androidx.compose.material3:material3" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+#noinspection SimilarGradleDependency
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+#noinspection SimilarGradleDependency
 retrofit-v290 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 ui = { module = "androidx.compose.ui:ui" }
 ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
@@ -99,6 +127,9 @@ junit-junit = { group = "junit", name = "junit", version.ref = "junitJunit" }
 androidx-monitor = { group = "androidx.test", name = "monitor", version.ref = "monitor" }
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
+androidx-paging-common-android = { group = "androidx.paging", name = "paging-common-android", version.ref = "pagingCommonAndroid" }
+#noinspection SimilarGradleDependency
+junit-junit2 = { group = "junit", name = "junit", version.ref = "junitJunitVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

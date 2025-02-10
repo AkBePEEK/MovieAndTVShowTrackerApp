@@ -4,6 +4,7 @@ import com.example.movietracker.data.api.MovieApi
 import com.example.movietracker.data.db.MovieDao
 import com.example.movietracker.model.Favorite
 import com.example.movietracker.model.Movie
+import com.example.movietracker.model.MovieResponse
 import com.example.movietracker.model.WatchlistItem
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -40,5 +41,13 @@ class MovieRepository @Inject constructor(
     suspend fun searchMovies(apiKey: String, query: String): List<Movie> {
         // Replace this with the actual API call
         return movieApi.searchMovies(query, apiKey)
+    }
+
+    suspend fun getPopularMovies(apiKey: String): List<Movie> {
+        return movieApi.getPopularMovies(apiKey).results
+    }
+
+    suspend fun getPopularMoviesPage(page: Int): MovieResponse {
+        return movieApi.getPopularMoviesPage("YOUR_API_KEY", page)
     }
 }
