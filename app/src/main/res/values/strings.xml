@@ -4,4 +4,6 @@
     <string name="movie_rating">Rating: %1$s</string>
     <string name="movie_title">Movie Title</string>
     <string name="movie_poster">Movie poster</string>
+    <string name="rating">Rating</string>
+    <string name="rating_n_a">Rating: N/A</string>
 </resources>

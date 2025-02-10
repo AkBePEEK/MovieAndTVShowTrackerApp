@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.movietracker.viewmodel.MovieViewModel
 import com.example.myapplication.databinding.FragmentDetailsBinding
+import kotlinx.coroutines.launch
 
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
@@ -29,14 +31,27 @@ class DetailsFragment : Fragment() {
         viewModel.getMovieDetails(movieId, "YOUR_API_KEY")
 
         // Observe movie details
-        viewModel.movieDetails.observe(viewLifecycleOwner) { movie ->
-            binding.titleTextView.text = movie.title
-            binding.overviewTextView.text = movie.overview
-            Glide.with(requireContext())
-                .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
-                .into(binding.posterImageView)
-            binding.favoriteButton.setOnClickListener {
-                viewModel.addToFavorites(movieId, movie.title, movie.posterPath ?: "", "movie")
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.movieDetails.collect { movie ->
+                if (movie != null) {
+                    binding.titleTextView.text = movie.title
+                }
+                if (movie != null) {
+                    binding.overviewTextView.text = movie.overview.takeIf { it.isNotEmpty() } ?: "No overview available."
+                }
+                if (movie != null) {
+                    binding.voteAverageTextView.text = if (movie.voteAverage > 0) movie.voteAverage.toString() else "No rating yet"
+                }
+                if (movie != null) {
+                    Glide.with(requireContext())
+                        .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
+                        .into(binding.posterImageView)
+                }
+                binding.favoriteButton.setOnClickListener {
+                    if (movie != null) {
+                        viewModel.addToFavorites(movieId, movie.title, movie.posterPath ?: "", "movie")
+                    }
+                }
             }
         }
     }

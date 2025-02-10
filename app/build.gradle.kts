@@ -58,10 +58,15 @@ android {
 
 dependencies {
     // Core dependencies
+    implementation(libs.androidx.lifecycle.livedata.ktx.v262)
     implementation(libs.androidx.core.ktx.v1120)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
+    testImplementation(libs.kotlinx.coroutines.test)// Use latest version
+    testImplementation(libs.mockk) // For MockK (or Mockito if you're using that)
+    testImplementation(libs.junit) // If you're using JUnit 4
+    testImplementation(libs.androidx.core.testing)
 
     // Retrofit for API calls
     implementation(libs.retrofit.v290)
@@ -73,6 +78,8 @@ dependencies {
     // Room for local database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.lifecycle.viewmodel.android)
+    implementation(libs.androidx.paging.common.android)
+    testImplementation(libs.junit.junit2)
     //noinspection KaptUsageInsteadOfKsp
     kapt(libs.androidx.room.compiler)
 

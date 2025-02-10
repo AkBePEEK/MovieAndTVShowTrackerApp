@@ -28,13 +28,23 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:paddingTop="16dp" />
+                android:paddingTop="16dp"
+                android:text="@string/rating" />
 
             <TextView
                 android:id="@+id/overviewTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp" />
+
+
+            <TextView
+                android:id="@+id/voteAverageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_n_a"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
 
             <Button
                 android:id="@+id/favoriteButton"
