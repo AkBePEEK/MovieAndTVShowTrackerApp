@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movietracker.ui.common.MovieAdapter
 import com.example.movietracker.viewmodel.MovieViewModel
-import com.example.myapplication.databinding.FragmentHomeBinding
+import com.example.movietracker.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -29,8 +31,10 @@ class HomeFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         // Observe movies from ViewModel
-        viewModel.movies.observe(viewLifecycleOwner) { movies ->
-            adapter.submitList(movies)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.movies.collect { movies ->
+                adapter.submitList(movies)
+            }
         }
 
         // Fetch trending movies

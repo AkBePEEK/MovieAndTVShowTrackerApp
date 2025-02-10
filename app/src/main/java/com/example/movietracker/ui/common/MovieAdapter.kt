@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movietracker.model.Movie
-import com.example.myapplication.R
+import com.example.movietracker.R
 
 class MovieAdapter(
     private val onItemClick: (Movie) -> Unit

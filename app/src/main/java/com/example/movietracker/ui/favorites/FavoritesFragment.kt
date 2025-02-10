@@ -12,8 +12,8 @@ import com.example.movietracker.model.Movie
 import com.example.movietracker.ui.common.MovieAdapter
 import com.example.movietracker.ui.details.DetailsFragment
 import com.example.movietracker.viewmodel.FavoritesViewModel
-import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentFavoritesBinding
+import com.example.movietracker.R
+import com.example.movietracker.databinding.FragmentFavoritesBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

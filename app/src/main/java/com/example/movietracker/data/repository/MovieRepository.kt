@@ -10,12 +10,11 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class MovieRepository @Inject constructor(
-    private val api: MovieApi,
     private val movieDao: MovieDao,
     private val movieApi: MovieApi
 ) {
     suspend fun getMovieDetails(movieId: Int, apiKey: String): Movie {
-        return api.getMovieDetails(movieId, apiKey)
+        return movieApi.getMovieDetails(movieId, apiKey)
     }
 
     suspend fun addToWatchlist(movieId: Int, title: String, posterPath: String, type: String) {
@@ -38,7 +37,7 @@ class MovieRepository @Inject constructor(
 
     fun getFavorites(): Flow<List<Favorite>> = movieDao.getFavorites()
 
-    suspend fun searchMovies(apiKey: String, query: String): List<Movie> {
+    suspend fun searchMovies(apiKey: String, query: String): MovieResponse {
         // Replace this with the actual API call
         return movieApi.searchMovies(query, apiKey)
     }

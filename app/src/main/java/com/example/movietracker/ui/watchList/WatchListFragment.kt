@@ -12,8 +12,8 @@ import com.example.movietracker.model.Movie
 import com.example.movietracker.ui.common.MovieAdapter
 import com.example.movietracker.ui.details.DetailsFragment
 import com.example.movietracker.viewmodel.WatchlistViewModel
-import com.example.myapplication.R
-import com.example.myapplication.databinding.FragmentWatchlistBinding
+import com.example.movietracker.R
+import com.example.movietracker.databinding.FragmentWatchlistBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

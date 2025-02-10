@@ -18,7 +18,7 @@ interface MovieApi {
     suspend fun searchMovies(
         @Query("query") query: String,
         @Query("api_key") apiKey: String
-    ): List<Movie>
+    ): MovieResponse
 
     @GET("movie/popular")
     suspend fun getPopularMovies(@Query("api_key") apiKey: String): MovieResponse

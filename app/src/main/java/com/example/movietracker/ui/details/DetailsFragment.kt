@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.movietracker.viewmodel.MovieViewModel
-import com.example.myapplication.databinding.FragmentDetailsBinding
+import com.example.movietracker.databinding.FragmentDetailsBinding
 import kotlinx.coroutines.launch
 
 class DetailsFragment : Fragment() {
