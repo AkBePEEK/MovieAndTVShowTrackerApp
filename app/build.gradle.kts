@@ -54,10 +54,26 @@ android {
         includeInBundle = true
     }
     buildToolsVersion = "35.0.1"
+    kapt {
+        arguments {
+            arg("room.incremental", "true")
+        }
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
     // Core dependencies
+    implementation(libs.androidx.compose.ui.ui)
+    implementation(libs.androidx.material)
+    implementation(libs.androidx.compose.ui.ui.tooling.preview)
+
+    // Ensure the Compose Runtime is included
+    implementation(libs.androidx.runtime)
+
+    // Compose Compiler (should match your Compose version)
+    kapt(libs.androidx.compiler)
     implementation(libs.androidx.lifecycle.livedata.ktx.v262)
     implementation(libs.androidx.core.ktx.v1120)
     implementation(libs.androidx.appcompat)
@@ -96,4 +112,9 @@ dependencies {
 
     implementation(libs.androidx.hilt.lifecycle.viewmodel)
     kapt(libs.androidx.hilt.compiler)
+
+    implementation(libs.kotlin.stdlib)
+    kapt(libs.dagger.compiler)
+
+    implementation(libs.androidx.room.ktx.v250)
 }

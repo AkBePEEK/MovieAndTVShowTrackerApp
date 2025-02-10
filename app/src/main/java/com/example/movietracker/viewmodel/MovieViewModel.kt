@@ -72,9 +72,10 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
         viewModelScope.launch {
             try {
                 val result = repository.searchMovies(apiKey, query)
-                _movies.value = result
+                // Assuming `result` is a MovieResponse and has a `results` field
+                _movies.value = result.results  // Set the actual list of movies
             } catch (e: Exception) {
-                _movies.value = emptyList()
+                _movies.value = emptyList()  // Handle error and set an empty list
                 e.printStackTrace()
             }
         }

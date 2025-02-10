@@ -2,6 +2,7 @@
 agp = "8.8.0"
 appcompat = "1.7.0"
 coil = "2.7.0"
+compiler = "1.5.15"
 composeBomVersion = "2025.01.01"
 constraintlayout = "2.2.0"
 converterGson = "2.11.0"
@@ -17,6 +18,7 @@ coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+kotlinStdlib = "2.1.0"
 kotlinxCoroutinesAndroid = "1.10.1"
 kotlinxCoroutinesTest = "1.7.3"
 lifecycleLivedataKtx = "2.8.7"
@@ -27,6 +29,7 @@ composeBom = "2025.01.01"
 lifecycleViewmodelKtx = "2.8.7"
 lifecycleViewmodelKtxVersion = "2.8.7"
 material = "1.12.0"
+materialVersion = "1.7.7"
 mockk = "1.13.7"
 navigationFragmentKtx = "2.8.6"
 navigationFragmentKtxVersion = "2.8.6"
@@ -37,6 +40,7 @@ retrofit = "2.11.0"
 retrofitVersion = "2.11.0"
 roomCompiler = "2.6.1"
 roomKtx = "2.6.1"
+roomKtxVersion = "2.6.1"
 roomRuntime = "2.6.1"
 material3Android = "1.3.1"
 junitJunit = "4.13.2"
@@ -45,12 +49,19 @@ junitKtx = "1.2.1"
 lifecycleViewmodelAndroid = "2.8.7"
 pagingCommonAndroid = "3.3.5"
 junitJunitVersion = "4.13.2"
+runtime = "1.7.7"
+ui = "1.7.7"
+uiToolingPreview = "1.7.7"
 
 [libraries]
 #noinspection SimilarGradleDependency
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 #noinspection SimilarGradleDependency
+androidx-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compiler" }
+#noinspection SimilarGradleDependency
 androidx-compose-bom-v20231000 = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
+androidx-compose-ui-ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
+androidx-compose-ui-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 #noinspection SimilarGradleDependency
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -68,6 +79,7 @@ androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-ru
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 #noinspection SimilarGradleDependency
 androidx-lifecycle-viewmodel-ktx-v270 = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtxVersion" }
+androidx-material = { module = "androidx.compose.material:material", version.ref = "materialVersion" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationFragmentKtx" }
 #noinspection SimilarGradleDependency
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
@@ -80,8 +92,12 @@ androidx-navigation-ui-ktx-v277 = { module = "androidx.navigation:navigation-ui-
 #noinspection SimilarGradleDependency
 androidx-recyclerview-v121 = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerviewVersion" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+#noinspection SimilarGradleDependency
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+#noinspection SimilarGradleDependency
+androidx-room-ktx-v250 = { module = "androidx.room:room-ktx", version.ref = "roomKtxVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "runtime" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 #noinspection SimilarGradleDependency
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterMoshi" }
@@ -89,6 +105,7 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 converter-gson-v290 = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 #noinspection SimilarGradleDependency
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hiltAndroid" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
@@ -109,6 +126,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 #noinspection SimilarGradleDependency
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { module = "com.google.android.material:material", version.ref = "material" }

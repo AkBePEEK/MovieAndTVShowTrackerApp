@@ -7,13 +7,18 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MovieDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWatchlistItem(item: WatchlistItem)
-    suspend fun insertFavorite(favorite: Favorite)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertFavorite(favorite: Favorite)  // Add @Insert annotation here
 
     @Delete
     suspend fun deleteWatchlistItem(item: WatchlistItem)
-    suspend fun removeFavorite(favorite: Favorite)
+
+    @Delete
+    suspend fun removeFavorite(favorite: Favorite)  // Add @Delete annotation here
 
     @Query("SELECT * FROM watchlist_items")
     fun getWatchlist(): Flow<List<WatchlistItem>>
