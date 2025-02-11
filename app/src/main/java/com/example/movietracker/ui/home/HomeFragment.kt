@@ -38,6 +38,6 @@ class HomeFragment : Fragment() {
         }
 
         // Fetch trending movies
-        viewModel.fetchPopularMovies("YOUR_API_KEY")
+        viewModel.fetchPopularMovies("0b4a614651d00362dbf058e488e6fa90")
     }
 }

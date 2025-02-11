@@ -14,13 +14,17 @@ import com.example.movietracker.ui.details.DetailsFragment
 import com.example.movietracker.viewmodel.WatchlistViewModel
 import com.example.movietracker.R
 import com.example.movietracker.databinding.FragmentWatchlistBinding
+import com.example.movietracker.ui.common.WatchlistAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class WatchlistFragment : Fragment() {
+class WatchlistFragment : Fragment(R.layout.fragment_watchlist) {
     private lateinit var binding: FragmentWatchlistBinding
     private val viewModel: WatchlistViewModel by viewModels()
+    @Inject
+    lateinit var watchlistAdapter: WatchlistAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentWatchlistBinding.inflate(inflater, container, false)
@@ -32,7 +36,6 @@ class WatchlistFragment : Fragment() {
 
         // Set up RecyclerView
         val adapter = MovieAdapter { movie ->
-            // Navigate to DetailsFragment
             val detailsFragment = DetailsFragment().apply {
                 arguments = Bundle().apply {
                     putInt("movieId", movie.id)
@@ -43,6 +46,7 @@ class WatchlistFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
@@ -66,4 +70,6 @@ class WatchlistFragment : Fragment() {
             }
         }
     }
+
+
 }

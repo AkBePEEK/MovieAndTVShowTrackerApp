@@ -8,5 +8,11 @@ data class Favorite(
     @PrimaryKey val id: Int,      // Unique ID of the movie/TV show
     val title: String,            // Title of the movie/TV show
     val posterPath: String?,      // Path to the poster image
-    val type: String              // Type ("movie" or "tv")
+    val type: String,              // Type ("movie" or "tv")
+    val overview: String,
+    val backdropPath: String?,
+    val releaseDate: String,
+    val voteAverage: Double,
+    val voteCount: Int,
+    val genreIds: List<Int>?
 )

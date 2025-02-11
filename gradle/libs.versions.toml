@@ -66,7 +66,7 @@ androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "a
 #noinspection SimilarGradleDependency
 androidx-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compiler" }
 #noinspection SimilarGradleDependency
-androidx-compose-bom-v20231000 = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
+fandroidx-compose-bom-v20231000 = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 androidx-compose-ui-ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
 androidx-compose-ui-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
@@ -137,7 +137,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 #noinspection SimilarGradleDependency
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+#noinspection SimilarGradleDependency
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
+#noinspection SimilarGradleDependency
 kotlin-stdlib-v1821 = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlibVersion" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }

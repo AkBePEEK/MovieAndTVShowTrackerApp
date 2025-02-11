@@ -30,9 +30,7 @@ class FavoritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set up RecyclerView
         val adapter = MovieAdapter { movie ->
-            // Navigate to DetailsFragment
             val detailsFragment = DetailsFragment().apply {
                 arguments = Bundle().apply {
                     putInt("movieId", movie.id)
@@ -52,13 +50,13 @@ class FavoritesFragment : Fragment() {
                     Movie(
                         id = favorite.id,
                         title = favorite.title,
-                        overview = "No Overview",  // Default or empty string for now
+                        overview = favorite.overview,
                         posterPath = favorite.posterPath,
-                        backdropPath = null,       // Set to null as not available in Favorite
-                        releaseDate = "TBD",       // Default value, you can adjust this based on your app's needs
-                        voteAverage = 0.0,         // Default value for ratings
-                        voteCount = 0,             // Default value for vote count
-                        genreIds = emptyList()     // Default empty list for genres
+                        backdropPath = favorite.backdropPath,
+                        releaseDate = favorite.releaseDate,
+                        voteAverage = favorite.voteAverage,
+                        voteCount = favorite.voteCount,
+                        genreIds = favorite.genreIds ?: emptyList()
                     )
                 }
                 adapter.submitList(movies)

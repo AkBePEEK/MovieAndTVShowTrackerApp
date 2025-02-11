@@ -28,7 +28,7 @@ class DetailsFragment : Fragment() {
         val movieId = arguments?.getInt("movieId") ?: return
 
         // Fetch movie details
-        viewModel.getMovieDetails(movieId, "YOUR_API_KEY")
+        viewModel.getMovieDetails(movieId, "0b4a614651d00362dbf058e488e6fa90")
 
         // Observe movie details
         viewLifecycleOwner.lifecycleScope.launch {

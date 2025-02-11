@@ -41,7 +41,7 @@ class SearchFragment : Fragment() {
         // Set up search functionality
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { viewModel.searchMovies("YOUR_API_KEY", it) }
+                query?.let { viewModel.searchMovies("0b4a614651d00362dbf058e488e6fa90", it) }
                 return true
             }
 

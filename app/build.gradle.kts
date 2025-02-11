@@ -71,6 +71,8 @@ dependencies {
 
     // Ensure the Compose Runtime is included
     implementation(libs.androidx.runtime)
+    implementation(libs.androidx.monitor)
+    implementation(libs.androidx.junit.ktx)
 
     // Compose Compiler (should match your Compose version)
     kapt(libs.androidx.compiler)
